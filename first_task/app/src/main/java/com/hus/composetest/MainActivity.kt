@@ -88,7 +88,8 @@ class MainActivity : ComponentActivity() {
 
                 }
                 val ctx = LocalContext.current
-                Button(shape = AbsoluteRoundedCornerShape(16.dp),
+                Button(
+                    shape = AbsoluteRoundedCornerShape(16.dp),
                     onClick = { /*TODO*/
                         val toast = Toast.makeText(ctx, "YePPI", Toast.LENGTH_SHORT)
                         toast.show()
@@ -134,12 +135,12 @@ class MainActivity : ComponentActivity() {
                 }
                 Text(
                     text = buildAnnotatedString {
-                        append( "By logging, you agree to our ")
-                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)){
+                        append("By logging, you agree to our ")
+                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
                             append("Terms & Conditions ")
                         }
                         append("and")
-                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)){
+                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
                             append(" PrivacyPolicy .")
                         }
 
@@ -176,7 +177,7 @@ fun MyTextField(holder: String) {
     val fieldValue = remember {
         mutableStateOf(value = "")
     }
-    OutlinedTextField(value = fieldValue.value,
+    OutlinedTextField(value = fieldValue.value, modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(corner = CornerSize(size = 16.dp)),
         onValueChange = { textString ->
             fieldValue.value = textString
