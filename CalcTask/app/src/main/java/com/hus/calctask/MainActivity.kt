@@ -89,13 +89,17 @@ class MainActivity : ComponentActivity() {
 
 
 
-        Column(modifier = Modifier.fillMaxSize().background(color = Color.LightGray)) {
+        Column(modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.LightGray)) {
             if (isDialogOpen) {
                 Alert { dismissAlert() }
             }
-            Row(modifier = Modifier
-                .background(Color.LightGray)
-                .fillMaxWidth()) {
+            Row(
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .fillMaxWidth()
+            ) {
                 IconButton(
                     onClick = {
 
@@ -119,8 +123,8 @@ class MainActivity : ComponentActivity() {
             Text(
                 text = resultText, modifier = Modifier
                     .weight(1f)
-                    .fillMaxWidth().padding(vertical = 20.dp)
-                   , fontSize = 25.sp
+                    .fillMaxWidth()
+                    .padding(vertical = 20.dp), fontSize = 25.sp
             )
             Card(
                 modifier = Modifier.weight(3f),

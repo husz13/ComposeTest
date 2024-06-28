@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -53,9 +55,9 @@ fun App() {
         mutableStateOf("")
     }
     var counter = 0
-    Column(modifier = Modifier.background(color = Color.LightGray)) {
-        LazyColumn(
-            modifier = Modifier.weight(1f),
+    Box(modifier = Modifier.background(color = Color.LightGray)) {
+        LazyColumn(modifier = Modifier.fillMaxHeight(),
+
             state = rememberLazyListState()
         ) {
             items(itemsList) {
@@ -67,7 +69,7 @@ fun App() {
 
             }
         }
-        Row {
+        Row(Modifier.align(Alignment.BottomCenter)) {
 
             TextField(modifier = Modifier.weight(1f).padding(), value = messageText, onValueChange = {
                 messageText = it
