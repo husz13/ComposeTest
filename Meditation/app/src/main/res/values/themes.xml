@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Meditation" parent="android:Theme.Material.Light.NoActionBar" >
+        <item name="android:colorPrimary">@color/deepblue</item>
+        <item name="android:colorPrimaryDark">@color/deepblue</item>
+        <!-- Secondary brand color. -->
+        <item name="android:colorSecondary">@color/deepblue</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="25">?attr/android:colorPrimaryDark</item>
+    </style>
+</resources>
